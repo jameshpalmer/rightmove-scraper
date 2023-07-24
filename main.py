@@ -43,7 +43,7 @@ def process_properties(search: Search, properties: list):
             )
 
             print(
-                f"\nNew property found in {search.name} for {property['price']['amount']}!"
+                f"\nNew property found in {search.name} for {property['price']['amount']}: https://www.rightmove.co.uk{property['propertyUrl']}"
             )
             new = True
 
@@ -65,7 +65,7 @@ if __name__ == "__main__":
                 properties = get_search_results(search)
                 process_properties(search, properties)
             except KeyboardInterrupt:
-                print("Exiting...")
+                print("\nExiting...")
                 exit()
             except Exception as e:
-                print(f"Error in {search.name}: {e}")
+                print(f"\nError in {search.name}: {e}")
